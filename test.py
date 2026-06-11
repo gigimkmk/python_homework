@@ -1,0 +1,14 @@
+try:
+    age = int(input("Enter your age: "))
+
+    if  age < 0:
+        raise  ValueError("Age canot be negative!")
+
+except:
+    print ("Please enter numbers only!")
+
+else:
+    if age < 18:
+        print("Minor")
+    else:
+        print("Adult")
