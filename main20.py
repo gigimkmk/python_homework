@@ -1,28 +1,41 @@
 # home word 1
 
-# class Person:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"Person: ({self.name}, {self.age})"
 
 
-# p1 = Person("Otar", 35)
+p1 = Person("Otar", 35)
 
 
-# def serialize(person):
-#     return f"Name: {person.name}, Age: {person.age}"
+def serialize(person):
+    return f"Name: {person.name}, Age: {person.age}"
+
+
+with open("person.txt", "w") as file:
+    file.write(serialize(p1))
 
 
 
-# with open("person.txt", "w") as file:
-#     file.write(serialize(p1))
+with open("person.txt", "r") as file:
+    data = file.readline()
 
 
+def deserialize(text):
+    parts = text.split(", ")
 
-# with open("person.txt", "r") as file:
-#     data = file.read()
+    name = parts[0].replace("Name: ", "")
+    age = int(parts[1].replace("Age: ", ""))
 
-# print(data)
+    return Person(name, age)
+
+person2 = deserialize(data)
+
+print(person2)
 
 # home work 2
 
