@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="google" content="notranslate" />
+    <title>Todo Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="index">
+    <div class="container">
+      <header class="page-header">
+        <h1>Todo Dashboard</h1>
+      </header>
+
+      <section class="filters" aria-label="Todo filters">
+        <label class="field">
+          <span>Search by title</span>
+          <input id="searchInput" type="search" placeholder="Search todos..." />
+        </label>
+
+        <label class="field">
+          <span>User ID</span>
+          <select id="userFilter">
+            <option value="all">All users</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Status</span>
+          <select id="statusFilter">
+            <option value="all">All statuses</option>
+            <option value="completed">Completed</option>
+            <option value="incomplete">Incomplete</option>
+          </select>
+        </label>
+
+        <button id="resetFilters" class="secondary-btn" type="button">Reset</button>
+      </section>
+
+      <div id="summary" class="summary" aria-live="polite"></div>
+
+      <main>
+        <div id="todoList" class="todo-list" aria-live="polite"></div>
+      </main>
+
+      <nav id="pagination" class="pagination" aria-label="Pagination"></nav>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
